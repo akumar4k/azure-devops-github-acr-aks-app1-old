@@ -20,7 +20,8 @@ variables:
 
   # Agent VM image name
   #vmImageName: 'ubuntu-latest'
-  pool: 'Default'
+  pool: 
+  name: 'Default'
 
 
 stages:
@@ -54,7 +55,8 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      vmImage: $(vmImageName)
+      #vmImage: $(vmImageName)
+      name: $(name)
     environment: 'akumar4kazuredevopsgithubacraksapp1-1676.default'
     strategy:
       runOnce:
