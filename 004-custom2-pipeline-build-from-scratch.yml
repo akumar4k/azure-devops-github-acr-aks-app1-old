@@ -17,13 +17,14 @@ stages:
        pool:
          name: 'Default'
        steps:
+    
        - task: Docker@2
          inputs:
-           containerRegistry: 'acraksdemo01'
-           repository: 'custom1aksnginxapp1'
-           command: 'buildAndPush'
-           Dockerfile: '**/Dockerfile'
-           tags: |
+          containerRegistry: 'acraksdemo01'
+          repository: 'custom1aksnginxapp1'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          tags: |
             $(tag)
             $(Build.SourceVersion)
 
